@@ -22,4 +22,22 @@ module.exports = {
     }
   },
 
+  async loginUser(req, res) {
+    if (!req.body.email) return res.status(400).send('Faltan Datos para LogIn');
+    if (!req.body.password) return res.status(400).send('Faltan Datos para LogIn');
+
+    try {
+      const user = await userModel.loginUser({
+        email: req.body.email,
+        password: req.body.password,
+      });
+  
+      return res.send(userDto.single(user));
+      
+    } catch (error) {
+      console.log(error);
+      return res.status(400).send(error.message);
+    }
+  },
+
 };
