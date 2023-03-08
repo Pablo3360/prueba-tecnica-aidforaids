@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cors = require("cors");
 const routes = require('./routes/index.js');
-const { errorHandler } = require('./middleware');
+const { errorHandler } = require('./middleware/errorHandler');
 
 const urlAllowOrigin = process.env.URL_ALLOW_ORIGIN;
 
