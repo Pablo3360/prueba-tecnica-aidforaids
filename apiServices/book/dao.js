@@ -1,4 +1,4 @@
-const { Book } = require('../../services/sequelize/db.js');
+const { Book, Distributor } = require('../../services/sequelize/db.js');
 
 const getBooks = async ({limit, offset}) => {
     const books = await Book.findAll({ limit, offset });
@@ -21,8 +21,14 @@ const updateBook = async (bookId, fieldsUpdate) => {
   }
 };
 
+const createDistributor = async (newDistributor) => {
+  const distributor = await Distributor.create(newDistributor);
+  return distributor;
+};
+
 module.exports = {
   getBooks, 
   createBook, 
   updateBook, 
+  createDistributor, 
 };

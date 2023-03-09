@@ -40,4 +40,14 @@ Hola
 			- /book/stock
 			- enviar por params el id del libro
 			- body quantity
-			- responde
+			- responde id, isnb, title, autor, stock
+		- agregar distribuidor
+			- POST
+			- /book/distributor
+			- body name
+			- Responde id, name
+		- Compra de libro
+			- POST
+			- /book/compra
+			- body bookId, distibutorId, quantity
+			- Responde

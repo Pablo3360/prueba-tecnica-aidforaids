@@ -52,5 +52,19 @@ module.exports = {
     }
   },
 
+  async createDistributor(req, res) {
+    if(!(req.body.name)){
+      return res.status(400).send('Faltan datos');
+    };
+    try {
+      const distributor = await bookModel.createDistributor({
+        name: req.body.name,
+      });
+      return res.send(distributor);
+    } catch (error) {
+      return res.status(400).send(error.message);
+    }
+  },
+
 
 };

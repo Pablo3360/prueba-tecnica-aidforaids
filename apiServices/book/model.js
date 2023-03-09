@@ -18,5 +18,9 @@ module.exports = {
     return bookDao.updateBook(bookId, fieldsUpdate);
   },
 
+  async createDistributor(newDistributor) {
+    return bookDao.createDistributor(newDistributor);
+  },
+
 
 };
