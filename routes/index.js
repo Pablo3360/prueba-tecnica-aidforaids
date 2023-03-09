@@ -4,10 +4,10 @@ const isAuthenticated = require('../middleware/isAuthenticated.js');
 
 const users = require('../apiServices/users/routes');
 const book = require('../apiServices/book/routes');
-const cart = require('../apiServices/cart/routes');
+const sales = require('../apiServices/sales/routes');
 
 router.use('/users', users);
 router.use('/book', isAuthenticated, book);
-router.use('/cart', isAuthenticated, cart);
+router.use('/sales', isAuthenticated, sales);
 
 module.exports = router;

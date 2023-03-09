@@ -60,8 +60,12 @@ Hola
 		- Para atributos futuros
 			- se define el atributo data del tipo DataTypes.JSONB
 	- Productos
-		- El usuario puede agregar un producto al carrito de compras
+		- Agregar book al carrito
 			- POST
-			- /cart/add
+			- /sales/addcart
 			- en Body se debe especificar el bookId
 			- Responde un Array con todos los books en el carrito del usuario
+		- Compra de un Book
+			- POST
+			- /sales/buy
+			- en body se debe enviar el bookId y quantity
