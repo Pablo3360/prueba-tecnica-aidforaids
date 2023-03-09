@@ -10,5 +10,9 @@ module.exports = {
     });
   },
 
+  async createBook(newBook) {
+    return bookDao.createBook(newBook);
+  },
+
 
 };
