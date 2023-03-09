@@ -46,7 +46,7 @@ Hola
 			- /book/distributor
 			- body name
 			- Responde id, name
-		- Compra de libro
+		- Registro de Compra de libros
 			- POST
 			- /book/compra
 			- params distributorId

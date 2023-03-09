@@ -28,7 +28,6 @@ module.exports = {
 
     const compras = books.map( book => ({ ...book, distributorId: parseInt(distributorId, 10)}) )
     return bookDao.registerCompra( compras );
-
   },
 
 

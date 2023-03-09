@@ -72,9 +72,7 @@ module.exports = {
     };
     try {
       const record = await bookModel.registerCompra( req.params.distributorId, req.body );
-
-      //Aumentar el stock segun las compras y responder los libros comprados con el stock final
-      return res.send(record);
+      return res.send(bookDto.afterRegisterCompras(record, req.user));
     } catch (error) {
       console.log(error);
       return res.status(400).send(error.message);
