@@ -32,6 +32,12 @@ Hola
 			- Responde Array con objetos donde se indica id, isnb, title, autor, stock
 		- Agregar libros
 			- Post
+			- /book/create
 			- body isnb, title, price, autor, editorial, quantity
 			- Responde id, isnb, title, autor, stock
-		
+		- Actualizar la existencia de un libro
+			- PUT
+			- /book/stock
+			- enviar por params el id del libro
+			- body quantity
+			- responde

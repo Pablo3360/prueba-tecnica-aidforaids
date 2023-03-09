@@ -10,7 +10,19 @@ const createBook = async (newBook) => {
   return book;
 };
 
+const updateBook = async (bookId, fieldsUpdate) => {
+  const book = await Book.findByPk(bookId);
+  if(book){
+    await book.update(fieldsUpdate);
+    await book.save();
+    return book;
+  } else {
+    throw new Error('No se ha encontrado el bookId');
+  }
+};
+
 module.exports = {
   getBooks, 
   createBook, 
+  updateBook, 
 };

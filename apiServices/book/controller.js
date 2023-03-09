@@ -37,5 +37,20 @@ module.exports = {
     }
   },
 
+  async updateStock(req, res) {
+    console.log(req.body);
+    const bookId = req.params.id;
+    if(isNaN(parseInt(bookId, 10))) return res.status(400).send('bookId invalido');
+    if(req.body.quantity === undefined ) return res.status(400).send('Faltan datos');
+    try {
+      const book = await bookModel.updateStock(bookId, {
+        stock: req.body.quantity,
+      });
+      return res.send(bookDto.single(book, req.user));
+    } catch (error) {
+      return res.status(400).send(error.message);
+    }
+  },
+
 
 };

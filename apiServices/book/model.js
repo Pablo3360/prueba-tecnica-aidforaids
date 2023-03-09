@@ -14,5 +14,9 @@ module.exports = {
     return bookDao.createBook(newBook);
   },
 
+  async updateStock(bookId, fieldsUpdate) {
+    return bookDao.updateBook(bookId, fieldsUpdate);
+  },
+
 
 };
