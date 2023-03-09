@@ -52,3 +52,5 @@ Hola
 			- params distributorId
 			- body array con elementos: { bookId, quantity }
 			- Responde array con los records
+		- Para atributos futuros
+			- se define el atributo data del tipo DataTypes.JSONB

@@ -32,6 +32,10 @@ module.exports = (sequelize) => {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
+    data: {
+      type: DataTypes.JSONB,
+      allowNull: true,
+    },
   }, {
     timestamps: true,
     paranoid: true,
