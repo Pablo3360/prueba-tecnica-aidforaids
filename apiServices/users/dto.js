@@ -4,6 +4,8 @@ const single = (resource, authUser) => ({
   name: resource.name,
   email: resource.email,
   token: resource.token ? resource.token : null,
+  imageUrl: resource.perfilImageUrl ? resource.perfilImageUrl : null,
+  direccion: resource.direccion,
 });
 
 const multiple = (resources, authUser) => resources.map((resource) => single(resource, authUser));

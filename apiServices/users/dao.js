@@ -14,7 +14,19 @@ const userByEmail = async (email) => {
   return user;
 };
 
+const perfilUser = async (userId, { perfilImageUrl, direccion}) => {
+  const user = await User.findByPk(userId);
+  if(user){
+    await user.update({ perfilImageUrl, direccion});
+    await user.save();
+    return user;
+  } else {
+    throw new Error('No se ha encontrado el userId');
+  }
+};
+
 module.exports = {
   createUser, 
   userByEmail, 
+  perfilUser, 
 };

@@ -20,6 +20,14 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING(),
       allowNull: false,
     },
+    perfilImageUrl: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    direccion: {
+      type: DataTypes.STRING(60),
+      allowNull: true,
+    },
   }, {
     hooks: {
 			afterCreate: (record) => {

@@ -40,4 +40,21 @@ module.exports = {
     }
   },
 
+  async perfilUser(req, res) {
+    if(isNaN(parseInt(req.params.id, 10))) return res.status(400).send('userId invalido');
+    try {
+      const user = await userModel.perfilUser({
+        userId: req.params.id,
+        image: req.file || null,
+        direccion: req.body.direccion || null,
+      });
+
+      return res.send(userDto.single(user));
+      
+    } catch (error) {
+      console.log(error);
+      return res.status(400).send(error.message);
+    }
+  },
+
 };
