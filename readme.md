@@ -6,13 +6,16 @@ Prueba Tecnica para Backend Engineer
 
 Node.js, Express, PostgreSQL, Sequelize, Claudinary, jsonwebtoken.
 
-## Prácticas de seguridad que se contemplan en la API
+## Prácticas de seguridad
 
 ```bash
+## La API contempla lo siguiente:
 1 - Se guarda la informacion sensible en varibles de entorno
 2 - Se realiza el hashing de las contraseñas de usuarios mediante la libreria bcrypt
 3 - Se trabaja con autenticación de usuarios mediante TOKENS, utilizando la libreria jsonwebtoken
-4 - 
+
+## Propuesta de seguridad que no ha sido implementada
+1 - Validaciones de los datos recibidos en cada EndPoint para asegurar su formato y tipo
 ```
 
 ## El proyecto intenta mantener dividido las siguientes Capas - Software Layers
@@ -101,7 +104,7 @@ Deberá suministrar una API_KEY y API_SECRET de Claudinary
 	- Enviar por body quantity
 	- Responde id, isnb, title, autor, stock
 
-### agregar distribuidor
+### Agregar distribuidor
 	- Metodo: POST
 	- Endpoint: /book/distributor
 	- Enviar por body name
