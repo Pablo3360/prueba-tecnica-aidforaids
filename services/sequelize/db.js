@@ -28,13 +28,19 @@ let entries = Object.entries(sequelize.models);
 let capsEntries = entries.map((entry) => [entry[0][0].toUpperCase() + entry[0].slice(1), entry[1]]);
 sequelize.models = Object.fromEntries(capsEntries);
 
-const { User, Distributor, Book, Compra } = sequelize.models;
+const { User, Distributor, Book, Compra, Cart } = sequelize.models;
 
 Distributor.hasMany(Compra);
 Compra.belongsTo(Distributor);
 
 Book.hasMany(Compra);
 Compra.belongsTo(Book);
+
+User.hasMany(Cart);
+Cart.belongsTo(User);
+
+Book.hasMany(Cart);
+Cart.belongsTo(Book);
 
 module.exports = {
   ...sequelize.models,

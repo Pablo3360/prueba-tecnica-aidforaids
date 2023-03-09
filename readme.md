@@ -8,18 +8,23 @@ Hola
 	- Registro de Usuarios
 		- Post
 		- /users/register
-		- En body nombre, email, password
-		- Responde id, nombre, email
-	- Autenticación de Usuarios
+		- En body name, email, password
+		- Responde id, name, email
+	- Login Autenticación de Usuarios
 		- Post
 		- /users/login
 		- En body email, password
-		- Responde id, nombre, email, token
+		- Responde id, name, email, token
+
+	Las siguientes rutas se requiere estar logeado y enviar el Token
+
 	- Perfil Usuarios
 		- PUT
-		- enviar por params id
-		- /users/perfil/:userId
-		- En body file (jpeg, png), direccion
+		- /users/perfil
+		- Enviar los siguientes field names y correspondiente contenido
+			field name: image (file, type: jpeg, png)
+			field name: direccion (string)
+		- Responde id, name, email, imageUrl, direccion
 		- Se guarda en Claudinary. 
 			Propuesta de mejora: 
 				guardar image con el id del User, 
@@ -54,3 +59,8 @@ Hola
 			- Responde array con los records
 		- Para atributos futuros
 			- se define el atributo data del tipo DataTypes.JSONB
+	- Productos
+		- El usuario puede agregar un producto al carrito de compras
+			- POST
+			- /cart/add
+			- en Body 
