@@ -63,4 +63,5 @@ Hola
 		- El usuario puede agregar un producto al carrito de compras
 			- POST
 			- /cart/add
-			- en Body 
+			- en Body se debe especificar el bookId
+			- Responde un Array con todos los books en el carrito del usuario

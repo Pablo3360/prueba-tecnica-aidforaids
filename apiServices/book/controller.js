@@ -11,8 +11,11 @@ module.exports = {
     limit = parseInt(limit);
 
     try {
-      const books = await bookModel.getBooks(page, limit);
-      return res.send(bookDto.multiple(books, req.user));
+      const { books, totalBooks } = await bookModel.getBooks(page, limit);
+      return res.send({
+        books: bookDto.multiple( books, req.user ), 
+        totalBooks,
+      });
     } catch (error) {
       return res.status(400).send(error.message);
     }

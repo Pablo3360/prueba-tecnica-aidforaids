@@ -2,7 +2,8 @@ const { Book, Distributor, Compra } = require('../../services/sequelize/db.js');
 
 const getBooks = async ({limit, offset}) => {
     const books = await Book.findAll({ limit, offset });
-    return books;
+    const totalBooks = await Book.count();
+    return ({ books, totalBooks});
 };
 
 const createBook = async (newBook) => {
