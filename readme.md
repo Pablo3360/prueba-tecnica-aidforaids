@@ -33,8 +33,8 @@ Hola
 		- Agregar libros
 			- Post
 			- /book/create
-			- body isnb, title, price, autor, editorial, quantity
-			- Responde id, isnb, title, autor, stock
+			- body isbn, title, price, autor, editorial, quantity
+			- Responde id, isbn, title, autor, stock
 		- Actualizar la existencia de un libro
 			- PUT
 			- /book/stock
@@ -49,5 +49,6 @@ Hola
 		- Compra de libro
 			- POST
 			- /book/compra
-			- body bookId, distibutorId, quantity
-			- Responde
+			- params distributorId
+			- body array con elementos: { bookId, quantity }
+			- Responde array con los records

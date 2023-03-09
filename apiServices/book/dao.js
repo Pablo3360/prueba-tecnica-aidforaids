@@ -1,4 +1,4 @@
-const { Book, Distributor } = require('../../services/sequelize/db.js');
+const { Book, Distributor, Compra } = require('../../services/sequelize/db.js');
 
 const getBooks = async ({limit, offset}) => {
     const books = await Book.findAll({ limit, offset });
@@ -26,9 +26,22 @@ const createDistributor = async (newDistributor) => {
   return distributor;
 };
 
+const findDistributor = async ( distributorId ) => {
+  return await Distributor.findByPk(distributorId);
+};
+
+const registerCompra = async ( records ) => {
+  const result = await Compra.bulkCreate(records);
+  console.log(result);
+  return result;
+ 
+};
+
 module.exports = {
   getBooks, 
   createBook, 
   updateBook, 
   createDistributor, 
+  findDistributor, 
+  registerCompra, 
 };

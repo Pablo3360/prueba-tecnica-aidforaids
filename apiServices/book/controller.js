@@ -66,5 +66,20 @@ module.exports = {
     }
   },
 
+  async registerCompra(req, res) {
+    if(!(req.params.distributorId)){
+      return res.status(400).send('Faltan indicar distribuidorId');
+    };
+    try {
+      const record = await bookModel.registerCompra( req.params.distributorId, req.body );
+
+      //Aumentar el stock segun las compras y responder los libros comprados con el stock final
+      return res.send(record);
+    } catch (error) {
+      console.log(error);
+      return res.status(400).send(error.message);
+    }
+  },
+
 
 };

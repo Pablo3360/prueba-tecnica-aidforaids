@@ -22,5 +22,14 @@ module.exports = {
     return bookDao.createDistributor(newDistributor);
   },
 
+  async registerCompra(distributorId, books) {
+    const distributor = bookDao.findDistributor(distributorId);
+    if(!distributor) throw new Error('No se ha encontrado el distribuidor');
+
+    const compras = books.map( book => ({ ...book, distributorId: parseInt(distributorId, 10)}) )
+    return bookDao.registerCompra( compras );
+
+  },
+
 
 };

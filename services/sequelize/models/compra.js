@@ -9,7 +9,7 @@ module.exports = (sequelize) => {
     },
     bookId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       references: {
         model: 'books',
         key: 'id'
@@ -17,7 +17,7 @@ module.exports = (sequelize) => {
     },
     distributorId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       references: {
         model: 'distributors',
         key: 'id'
@@ -25,7 +25,7 @@ module.exports = (sequelize) => {
     },
     quantity: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
   }, {
     timestamps: true,
